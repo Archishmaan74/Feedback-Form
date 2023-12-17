@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FeedbackService } from '../feedback.service';
 
 @Component({
   selector: 'app-feedback',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent {
-
+  feedback: any = []
+  constructor(private feedbackService : FeedbackService){
+    
+  }
 }
