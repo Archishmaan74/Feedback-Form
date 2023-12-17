@@ -30,4 +30,16 @@ router.post("/feedback",(req,res)=>{
     })
 })
 
+router.get("/displayfeedback",(req,res)=>{
+    console.log("Display feedback API getting hit...");
+    dbConnection.collection("feedback").find({}).toArray((err,data)=>{
+        if(err){
+            console.log("Cannot display data...");
+        }
+        else{
+            res.send(data)
+        }
+    })
+})
+
 module.exports = router
