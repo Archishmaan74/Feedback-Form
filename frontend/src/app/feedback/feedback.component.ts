@@ -7,13 +7,23 @@ import { FeedbackService } from '../feedback.service';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent {
-  feedback: any = {}
+  feedback: any = {
+    usr: "",
+    review: ""
+  }
   constructor(private feedbackService : FeedbackService){
 
   }
   addFeedback(feedback: any){
-     this.feedbackService.addFeedback(feedback).subscribe(feedback)
-     alert("Thanks "+feedback.usr+" for giving your valuable feedback!")
+    console.log(feedback);
+    
+    if(this.feedback.usr.length==0  || this.feedback.review.length==0){
+      alert("Fields are empty!")
+    }
+    else{
+
+      this.feedbackService.addFeedback(feedback).subscribe(feedback)
+      alert("Thanks "+feedback.usr+" for giving your valuable feedback!")
+    }
   }
-  
 }
