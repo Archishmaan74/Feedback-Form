@@ -15,4 +15,5 @@ export class FeedbackComponent {
      this.feedbackService.addFeedback(feedback).subscribe(feedback)
      alert("Thanks "+feedback.usr+" for giving your valuable feedback!")
   }
+  
 }

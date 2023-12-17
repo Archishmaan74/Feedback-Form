@@ -1,1 +1,16 @@
-<p>reviews works!</p>
+<div class="container-fluid" style="text-align: center; width: 500px;">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Feedback</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let f of feedback">
+            <tr>
+                <td>{{f.usr}}</td>
+                <td>{{f.review}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

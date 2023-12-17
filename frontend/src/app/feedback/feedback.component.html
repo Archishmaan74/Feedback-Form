@@ -12,9 +12,8 @@
             Feedback: <input type="text" [(ngModel)]="feedback.review" required>
         </div>
         <br>
-    </div>
-    <br>
-    <div style="text-align: center;">
-        <button (click)="addFeedback(feedback)" class="btn btn-outline-primary">Send</button>
+        <div style="text-align: center;">
+            <button *ngIf="feedback.usr && feedback.review" [class.disabled]="!feedback.usr && !feedback.review" (click)="addFeedback(feedback)" class="btn btn-outline-primary">Send</button>
+        </div>
     </div>
 </div>
