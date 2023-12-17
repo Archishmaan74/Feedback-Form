@@ -16,6 +16,7 @@ dbClient.connect(dbUrl,(err,connection)=>{
 })
 
 router.post("/feedback",(req,res)=>{
+    console.log("Feedback API getting hit...");
     dbConnection.collection("feedback").find({usr:req.body.usr}).toArray((err,data)=>{
         if(err){
             console.log("Cannot send data to database...");
@@ -24,6 +25,7 @@ router.post("/feedback",(req,res)=>{
             dbConnection.collection("feedback").insertOne({
                 ...req.body
             })
+            res.send("Feedback Inserted!")
         }
     })
 })
