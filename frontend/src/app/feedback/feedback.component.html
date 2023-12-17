@@ -6,15 +6,15 @@
     <div class="container-fluid" style="text-align: center; margin-top: 100px; background-color: beige; width: 300px;">
         <br>
         <div style="margin-left: 25px;">
-            Name: <input type="text" required><br><br>
+            Name: <input type="text" [(ngModel)]="feedback.usr" required><br><br>
         </div>
         <div>
-            Feedback: <input type="text" required>
+            Feedback: <input type="text" [(ngModel)]="feedback.review" required>
         </div>
         <br>
     </div>
     <br>
     <div style="text-align: center;">
-        <button class="btn btn-outline-primary">Send</button>
+        <button (click)="addFeedback(feedback)" class="btn btn-outline-primary">Send</button>
     </div>
 </div>

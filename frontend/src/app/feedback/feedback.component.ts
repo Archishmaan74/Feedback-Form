@@ -7,8 +7,12 @@ import { FeedbackService } from '../feedback.service';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent {
-  feedback: any = []
+  feedback: any = {}
   constructor(private feedbackService : FeedbackService){
-    
+
+  }
+  addFeedback(feedback: any){
+     this.feedbackService.addFeedback(feedback).subscribe(feedback)
+     alert("Thanks "+feedback.usr+" for giving your valuable feedback!")
   }
 }
